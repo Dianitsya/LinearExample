@@ -40,6 +40,45 @@ namespace LinearExample
             }
         }
 
+
+        public void BinarySearch()
+        {
+            char ch;
+            do
+            {
+                //accept the number to be searched
+                Console.Write("\nEnter the element you want to seach : ");
+                int item = Convert.ToInt32(Console.ReadLine());
+
+                //apply binary search
+                int lowerbound = 0;
+                int upperbound = 0;
+
+                //obtain the index of the middle element
+                int mid = (lowerbound + upperbound) / 2;
+                int ctr = 1;
+
+                //loop to search for the element in the array
+                while ((item != arr[mid]) && (ctr <= upperbound))
+                {
+                    if (item == arr [mid])
+                        lowerbound = mid +  1;
+                    else
+                        upperbound = mid - 1;
+
+                    mid = (lowerbound + upperbound) / 2;
+                    ctr++;
+                }
+                if (item == arr[mid])
+                    Console.WriteLine("\n" + item.ToString() + "found at position" + (mid + 1).ToString());
+                else
+                    Console.WriteLine("\n" + item.ToString() + "not found is the array\n");
+                Console.WriteLine("\nNumber of coparasion : " + ctr);
+
+                Console.Write("\nContinue search (y/n) : ")
+                    ch = char.Parse(Console.ReadLine().ToUpper);
+            }
+        }
         static void Main(string[] args)
         {
         }
