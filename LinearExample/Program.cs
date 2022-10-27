@@ -6,8 +6,15 @@ using System.Threading.Tasks;
 
 namespace LinearExample
 {
-    internal class Program
+    class Program
     {
+        //array to be searched
+        int[] arr = new int[20];
+        //number of element in the array
+        int n;
+        //get the number of element to store in the array
+        int i;
+
         static void Main(string[] args)
         {
         }
