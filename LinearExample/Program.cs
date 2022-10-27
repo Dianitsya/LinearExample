@@ -19,7 +19,7 @@ namespace LinearExample
         {
             while (true)
             {
-                Console.Write("enter the number of element in the array");
+                Console.Write("enter the number of element in the array : ");
                 string s = Console.ReadLine();
                 n = Int32.Parse(s);
                 if ((n > 0) && (n <= 20))
@@ -34,7 +34,7 @@ namespace LinearExample
             Console.WriteLine("--------------------------------");
             for (i = 0; i < n; i++)
             {
-                Console.WriteLine("<" + (i+ 1) + ">");
+                Console.Write("<" + (i+ 1) + ">");
                 string s1 = Console.ReadLine();
                 arr[i] = Int32.Parse(s1);
             }
@@ -98,20 +98,64 @@ namespace LinearExample
                     ctr++;
                     if (arr[i] == item)
                     {
-                        Console.WriteLine("\n" + item.ToString() + "found st position" + (i + 1).ToString());
+                        Console.WriteLine("\n" + item.ToString() + "found st position" + (i + 1).ToString ());
                         break;
                     }
                 }
                 if (i == n)
                     Console.WriteLine("\n" + item.ToString() + "not found in the array");
                 Console.WriteLine("\nNumber of comparision " + ctr);
-                Console.WriteLine("\nContinue search (y/n) : ");
+                Console.Write("\nContinue search (y/n) : ");
                 ch = char.Parse(Console.ReadLine().ToUpper());
             } while ((ch == 'y'));
         }
             
         static void Main(string[] args)
         {
+            Program Mylist = new Program();
+            int pilihanmenu;
+            char ch;
+            do
+            {
+                do
+                {
+                    Console.WriteLine("Menu Option");
+                    Console.WriteLine("=================");
+                    Console.WriteLine("1. Linear Search");
+                    Console.WriteLine("2. Binear Search");
+                    Console.WriteLine("3. Exit");
+                    Console.Write("Enter your choice (1,2,3) : ");
+                    pilihanmenu = Convert.ToInt32(Console.ReadLine());
+                    switch (pilihanmenu)
+                    {
+                        case 1:
+                            Console.WriteLine("");
+                            Console.WriteLine("..................");
+                            Console.WriteLine("Linear Seach");
+                            Console.WriteLine("..................");
+                            Mylist.input();
+                            Mylist.LinearSearch();
+                            break;
+                        case 2:
+                            Console.WriteLine("");
+                            Console.WriteLine("..................");
+                            Console.WriteLine("Binary Search");
+                            Console.WriteLine("..................");
+                            Mylist.input();
+                            Mylist.BinarySearch();
+                            break;
+                        case 3:
+                            Console.WriteLine("Exit");
+                            break;
+                    }
+                    Console.WriteLine("\nPilih menu lagi? (y/n) : ");
+                    ch = char.Parse(Console.ReadLine().ToLower());
+                    Console.Clear();
+                } while (ch == 'y');
+                //to exit from the console
+                Console.WriteLine("\n\nPress return to exit.");
+                Console.ReadLine();
+            }while (pilihanmenu !=3);
         }
     }
 }
