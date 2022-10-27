@@ -61,8 +61,8 @@ namespace LinearExample
                 //loop to search for the element in the array
                 while ((item != arr[mid]) && (ctr <= upperbound))
                 {
-                    if (item == arr [mid])
-                        lowerbound = mid +  1;
+                    if (item == arr[mid])
+                        lowerbound = mid + 1;
                     else
                         upperbound = mid - 1;
 
@@ -75,9 +75,10 @@ namespace LinearExample
                     Console.WriteLine("\n" + item.ToString() + "not found is the array\n");
                 Console.WriteLine("\nNumber of coparasion : " + ctr);
 
-                Console.Write("\nContinue search (y/n) : ")
-                    ch = char.Parse(Console.ReadLine().ToUpper);
-            }
+                Console.Write("\nContinue search (y/n) : ");
+                    ch = char.Parse(Console.ReadLine().ToUpper());
+
+            } while ((ch == 'y'));
         }
         static void Main(string[] args)
         {
